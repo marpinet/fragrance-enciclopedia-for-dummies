@@ -5,49 +5,140 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fragrance Encyclopedia for Dummies</title>
     <style>
+        @keyframes twinkle {
+            0% { opacity: 0.3; }
+            50% { opacity: 1; }
+            100% { opacity: 0.3; }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
             min-height: 100vh;
-            background-color: #f8e6e6; /* Light pink pastel */
+            background-color: #000000;
+            background-image: radial-gradient(circle, transparent 1px, #000000 1px),
+                            radial-gradient(circle, #ffffff 1px, transparent 1px);
+            background-size: 50px 50px;
+            background-position: 0 0, 25px 25px;
             display: flex;
             justify-content: center;
             align-items: center;
+            color: #ffffff;
+            overflow: hidden;
+        }
+
+        .stars {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 1.5s infinite;
         }
 
         .container {
             text-align: center;
-            padding: 2rem;
-            background-color: #fff5f5; /* Very light pink */
+            padding: 3rem;
+            background: rgba(0, 0, 0, 0.7);
+            border: 2px solid #00ffff;
             border-radius: 20px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 20px #00ffff,
+                       inset 0 0 20px #00ffff;
             max-width: 800px;
             margin: 20px;
+            position: relative;
+            animation: float 6s ease-in-out infinite;
+            backdrop-filter: blur(5px);
         }
 
         h1 {
-            color: #9b6b9d; /* Pastel purple */
+            color: #00ffff;
             margin-bottom: 1.5rem;
+            text-shadow: 0 0 10px #00ffff;
+            font-size: 2.5em;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
         p {
-            color: #707070;
+            color: #ffffff;
             line-height: 1.6;
             font-size: 1.1rem;
+            text-shadow: 0 0 5px #ffffff;
         }
 
         .accent {
-            color: #87a9c7; /* Pastel blue */
+            color: #ff00ff;
             font-weight: bold;
+            text-shadow: 0 0 10px #ff00ff;
+        }
+
+        .nav-items {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .nav-item {
+            position: absolute;
+            animation: float 4s ease-in-out infinite;
+            pointer-events: auto;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-item:hover {
+            transform: scale(1.1);
         }
     </style>
+    <script>
+        function createStars() {
+            const starsContainer = document.querySelector('.stars');
+            const numberOfStars = 100;
+            
+            for (let i = 0; i < numberOfStars; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.left = `${Math.random() * 100}%`;
+                star.style.top = `${Math.random() * 100}%`;
+                star.style.animationDelay = `${Math.random() * 2}s`;
+                starsContainer.appendChild(star);
+            }
+        }
+
+        window.addEventListener('load', createStars);
+    </script>
 </head>
 <body>
+    <div class="stars"></div>
     <div class="container">
         <h1>Fragrance Encyclopedia for Dummies</h1>
         <p>Welcome to your friendly guide to the fascinating world of fragrances! Whether you're a complete beginner or just curious about perfumes, this encyclopedia is designed to make understanding fragrances simple and enjoyable.</p>
         <p>Discover the <span class="accent">basics of perfumery</span>, learn about different <span class="accent">scent families</span>, and explore the beautiful world of <span class="accent">aromatic ingredients</span> - all explained in a way that's easy to understand.</p>
     </div>
+    <nav class="nav-items">
+        <a href="#scent-families" class="nav-item" style="top: 20%; left: 20%;">
+            <img src="path-to-your-icon.png" alt="Scent Families">
+        </a>
+        <a href="#ingredients" class="nav-item" style="top: 30%; right: 20%;">
+            <img src="path-to-your-icon.png" alt="Ingredients">
+        </a>
+        <!-- Add more nav items as needed -->
+    </nav>
 </body>
 </html>

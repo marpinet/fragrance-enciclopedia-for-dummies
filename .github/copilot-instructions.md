@@ -14,10 +14,10 @@ This is a web-based encyclopedia project designed to provide simple, accessible 
 ### Color Scheme
 The project uses a consistent pastel color palette:
 - Background: `#f8e6e6` (Light green pastel)
-- Container background: `#fff5f5` (Very light pink)
-- Headings: `#9b6b9d` (Pastel purple)
-- Accent text: `#87a9c7` (Pastel blue)
-- Regular text: `#707070` (Gray)
+- Container background: `#fff5f5` (Very light green)
+- Headings: `#9b6b9d` (Pastel blue)
+- Accent text: `#87a9c7` (Pastel cyan)
+- Regular text: `#707070` (Black)
 
 ### CSS Conventions
 - BEM-like class naming convention for components
