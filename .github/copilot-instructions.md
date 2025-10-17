@@ -13,7 +13,7 @@ This is a web-based encyclopedia project designed to provide simple, accessible 
 
 ### Color Scheme
 The project uses a consistent pastel color palette:
-- Background: `#f8e6e6` (Light pink pastel)
+- Background: `#f8e6e6` (Light green pastel)
 - Container background: `#fff5f5` (Very light pink)
 - Headings: `#9b6b9d` (Pastel purple)
 - Accent text: `#87a9c7` (Pastel blue)
