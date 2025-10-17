@@ -6,28 +6,32 @@
     <title>Fragrance Encyclopedia for Dummies</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             /* Light Theme Colors */
-            --light-bg: #f8f9fa;
-            --light-surface: #ffffff;
-            --light-primary: #7c3aed;
-            --light-secondary: #e9d5ff;
-            --light-text: #1f2937;
-            --light-text-secondary: #6b7280;
-            --light-border: #e5e7eb;
-            --light-gradient: linear-gradient(135deg, #7c3aed, #c084fc);
+            --light-bg: #FFF8E7;
+            --light-surface: #FFFFFF;
+            --light-primary: #FF6B35;
+            --light-secondary: #4CB963;
+            --light-accent1: #00A9E0;
+            --light-accent2: #FF87B2;
+            --light-text: #2C363F;
+            --light-text-secondary: #6B7280;
+            --light-border: #E5E7EB;
+            --light-gradient: linear-gradient(135deg, #FF6B35, #FF87B2);
             
             /* Dark Theme Colors */
-            --dark-bg: #111827;
-            --dark-surface: #1f2937;
-            --dark-primary: #8b5cf6;
-            --dark-secondary: #5b21b6;
-            --dark-text: #f3f4f6;
-            --dark-text-secondary: #9ca3af;
-            --dark-border: #374151;
-            --dark-gradient: linear-gradient(135deg, #6d28d9, #7c3aed);
+            --dark-bg: #2C363F;
+            --dark-surface: #3D4852;
+            --dark-primary: #FF8B68;
+            --dark-secondary: #6DD68E;
+            --dark-accent1: #45C7F0;
+            --dark-accent2: #FF9DC4;
+            --dark-text: #F8F9FA;
+            --dark-text-secondary: #CED4DA;
+            --dark-border: #4A5568;
+            --dark-gradient: linear-gradient(135deg, #FF8B68, #FF9DC4);
             
             /* Spacing */
             --spacing-xs: 0.5rem;
@@ -77,20 +81,58 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Quicksand', sans-serif;
             background-color: var(--bg);
             color: var(--text);
             line-height: 1.6;
             min-height: 100vh;
             transition: background-color 0.3s ease, color 0.3s ease;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 300px;
+            background: var(--gradient);
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .decorative-circle {
+            position: absolute;
+            border-radius: 50%;
+            background: var(--primary);
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .circle-1 {
+            width: 200px;
+            height: 200px;
+            top: 10%;
+            left: 5%;
+            background: var(--accent1);
+        }
+
+        .circle-2 {
+            width: 150px;
+            height: 150px;
+            top: 30%;
+            right: 10%;
+            background: var(--accent2);
         }
 
         .header {
-            background: var(--gradient);
+            background: var(--surface);
             padding: var(--spacing-md);
             position: sticky;
             top: 0;
             z-index: 10;
+            border-bottom: 2px solid var(--border);
         }
 
         .header-content {
@@ -102,34 +144,67 @@
         }
 
         .logo {
-            color: white;
+            color: var(--primary);
             font-size: 1.5rem;
             font-weight: 700;
             text-decoration: none;
+            font-family: 'Outfit', sans-serif;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+        }
+
+        .logo-icon {
+            stroke: currentColor;
         }
 
         .nav {
             display: flex;
-            gap: var(--spacing-md);
+            gap: var(--spacing-lg);
+            align-items: center;
         }
 
         .nav-link {
-            color: white;
+            color: var(--text);
             text-decoration: none;
-            font-weight: 500;
-            transition: opacity 0.2s ease;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            padding: var(--spacing-xs) var(--spacing-sm);
+            border-radius: 100px;
+            transition: all 0.2s ease;
         }
 
         .nav-link:hover {
-            opacity: 0.8;
+            color: var(--primary);
+            background: var(--light-bg);
+            transform: translateY(-2px);
+        }
+
+        .nav-link svg {
+            stroke: currentColor;
+            width: 20px;
+            height: 20px;
         }
 
         .theme-toggle {
             background: none;
-            border: none;
-            color: white;
+            border: 2px solid var(--border);
+            color: var(--text);
             cursor: pointer;
             padding: var(--spacing-xs);
+            border-radius: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .theme-toggle:hover {
+            color: var(--primary);
+            border-color: var(--primary);
+            transform: rotate(45deg);
         }
 
         .container {
@@ -169,38 +244,69 @@
 
         .card {
             background: var(--surface);
-            border-radius: var(--radius-lg);
-            padding: var(--spacing-md);
+            border-radius: 24px;
+            padding: var(--spacing-lg);
             box-shadow: var(--shadow-md);
-            border: 1px solid var(--border);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            border: 2px solid var(--border);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: var(--gradient);
         }
 
         .card:hover {
-            transform: translateY(-2px);
+            transform: translateY(-4px) rotate(1deg);
             box-shadow: var(--shadow-lg);
+            border-color: var(--primary);
         }
 
         .card h2 {
             color: var(--primary);
             margin-bottom: var(--spacing-sm);
-            font-size: 1.25rem;
+            font-size: 1.5rem;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
         }
 
         .card p {
             color: var(--text-secondary);
-            font-size: 0.95rem;
+            font-size: 1.1rem;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .card-icon {
+            width: 48px;
+            height: 48px;
+            margin-bottom: var(--spacing-md);
+            color: var(--primary);
         }
 
         .tag {
             display: inline-block;
-            padding: 0.25rem 0.75rem;
-            background: var(--secondary);
+            padding: 0.5rem 1rem;
+            background: var(--light-bg);
             color: var(--primary);
-            border-radius: var(--radius-sm);
+            border: 2px solid var(--primary);
+            border-radius: 100px;
             font-size: 0.875rem;
+            font-weight: 600;
             margin-right: var(--spacing-xs);
             margin-bottom: var(--spacing-xs);
+            transition: all 0.2s ease;
+        }
+
+        .tag:hover {
+            background: var(--primary);
+            color: white;
         }
     </style>
     <script>
@@ -221,15 +327,45 @@
     </script>
 </head>
 <body>
+    <div class="decorative-circle circle-1"></div>
+    <div class="decorative-circle circle-2"></div>
+    
     <header class="header">
         <div class="header-content">
-            <a href="/" class="logo">Fragrance Guide</a>
+            <a href="/" class="logo">
+                <svg class="logo-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Fragrance Guide
+            </a>
             <nav class="nav">
-                <a href="#scent-families" class="nav-link">Scent Families</a>
-                <a href="#notes" class="nav-link">Notes</a>
-                <a href="#brands" class="nav-link">Brands</a>
-                <a href="#guide" class="nav-link">Beginner's Guide</a>
-                <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
+                <a href="#scent-families" class="nav-link">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M12 8c-2.8 0-5 2.2-5 5s2.2 5 5 5 5-2.2 5-5-2.2-5-5-5z" stroke-width="2"/>
+                        <path d="M12 3V1M12 23v-2M3 12H1M23 12h-2M20 20l-1.4-1.4M5.4 5.4L4 4M20 4l-1.4 1.4M5.4 18.6L4 20" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    Scent Families
+                </a>
+                <a href="#notes" class="nav-link">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    Notes
+                </a>
+                <a href="#brands" class="nav-link">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2" stroke-width="2"/>
+                        <line x1="3" y1="9" x2="21" y2="9" stroke-width="2"/>
+                        <line x1="9" y1="21" x2="9" y2="9" stroke-width="2"/>
+                    </svg>
+                    Brands
+                </a>
+                <button class="theme-toggle" onclick="toggleTheme()">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <circle cx="12" cy="12" r="5" stroke-width="2"/>
+                        <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke-width="2"/>
+                    </svg>
+                </button>
             </nav>
         </div>
     </header>
