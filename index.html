@@ -6,32 +6,32 @@
     <title>Fragrance Encyclopedia for Dummies</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             /* Light Theme Colors */
-            --light-bg: #FFF8E7;
+            --light-bg: #F5F1EA;
             --light-surface: #FFFFFF;
-            --light-primary: #FF6B35;
-            --light-secondary: #4CB963;
-            --light-accent1: #00A9E0;
-            --light-accent2: #FF87B2;
-            --light-text: #2C363F;
-            --light-text-secondary: #6B7280;
-            --light-border: #E5E7EB;
-            --light-gradient: linear-gradient(135deg, #FF6B35, #FF87B2);
+            --light-primary: #8B7355;
+            --light-secondary: #A69682;
+            --light-accent1: #C8B6A6;
+            --light-accent2: #D4C5B1;
+            --light-text: #4A3F35;
+            --light-text-secondary: #7D6B5D;
+            --light-border: #E5DED5;
+            --light-gradient: linear-gradient(135deg, #8B7355, #C8B6A6);
             
             /* Dark Theme Colors */
-            --dark-bg: #2C363F;
-            --dark-surface: #3D4852;
-            --dark-primary: #FF8B68;
-            --dark-secondary: #6DD68E;
-            --dark-accent1: #45C7F0;
-            --dark-accent2: #FF9DC4;
-            --dark-text: #F8F9FA;
-            --dark-text-secondary: #CED4DA;
-            --dark-border: #4A5568;
-            --dark-gradient: linear-gradient(135deg, #FF8B68, #FF9DC4);
+            --dark-bg: #2C2420;
+            --dark-surface: #3A322D;
+            --dark-primary: #C8B6A6;
+            --dark-secondary: #A69682;
+            --dark-accent1: #8B7355;
+            --dark-accent2: #D4C5B1;
+            --dark-text: #F5F1EA;
+            --dark-text-secondary: #D4C5B1;
+            --dark-border: #4A3F35;
+            --dark-gradient: linear-gradient(135deg, #C8B6A6, #8B7355);
             
             /* Spacing */
             --spacing-xs: 0.5rem;
@@ -81,13 +81,14 @@
         }
 
         body {
-            font-family: 'Quicksand', sans-serif;
+            font-family: 'Lora', serif;
             background-color: var(--bg);
             color: var(--text);
-            line-height: 1.6;
+            line-height: 1.7;
             min-height: 100vh;
             transition: background-color 0.3s ease, color 0.3s ease;
             position: relative;
+            letter-spacing: 0.01em;
         }
 
         body::before {
@@ -145,13 +146,14 @@
 
         .logo {
             color: var(--primary);
-            font-size: 1.5rem;
-            font-weight: 700;
+            font-size: 1.75rem;
+            font-weight: 600;
             text-decoration: none;
-            font-family: 'Outfit', sans-serif;
+            font-family: 'Cormorant Garamond', serif;
             display: flex;
             align-items: center;
             gap: var(--spacing-xs);
+            letter-spacing: 0.02em;
         }
 
         .logo-icon {
@@ -219,13 +221,13 @@
         }
 
         .hero h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
+            font-size: 3.5rem;
+            font-weight: 600;
             margin-bottom: var(--spacing-md);
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: var(--primary);
+            font-family: 'Cormorant Garamond', serif;
+            letter-spacing: 0.02em;
+            line-height: 1.2;
         }
 
         .hero p {
@@ -244,10 +246,10 @@
 
         .card {
             background: var(--surface);
-            border-radius: 24px;
+            border-radius: 8px;
             padding: var(--spacing-lg);
-            box-shadow: var(--shadow-md);
-            border: 2px solid var(--border);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border);
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
@@ -259,8 +261,9 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 6px;
-            background: var(--gradient);
+            height: 1px;
+            background: var(--primary);
+            opacity: 0.3;
         }
 
         .card:hover {
@@ -272,9 +275,10 @@
         .card h2 {
             color: var(--primary);
             margin-bottom: var(--spacing-sm);
-            font-size: 1.5rem;
-            font-family: 'Outfit', sans-serif;
+            font-size: 1.75rem;
+            font-family: 'Cormorant Garamond', serif;
             font-weight: 600;
+            letter-spacing: 0.02em;
         }
 
         .card p {
@@ -292,21 +296,22 @@
 
         .tag {
             display: inline-block;
-            padding: 0.5rem 1rem;
-            background: var(--light-bg);
+            padding: 0.4rem 1rem;
+            background: transparent;
             color: var(--primary);
-            border: 2px solid var(--primary);
-            border-radius: 100px;
+            border: 1px solid var(--primary);
+            border-radius: 4px;
             font-size: 0.875rem;
-            font-weight: 600;
+            font-weight: 500;
             margin-right: var(--spacing-xs);
             margin-bottom: var(--spacing-xs);
             transition: all 0.2s ease;
+            font-family: 'Lora', serif;
         }
 
         .tag:hover {
-            background: var(--primary);
-            color: white;
+            background: var(--light-bg);
+            color: var(--primary);
         }
     </style>
     <script>
