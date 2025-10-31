@@ -504,6 +504,78 @@
                                 </svg>
                                 <span>Fresh/Citrus</span>
                             </button>
+                            <button class="option-card" data-value="gourmand">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M8 3v18M16 3v18M4 7h16M4 17h16"/>
+                                </svg>
+                                <span>Gourmand</span>
+                            </button>
+                            <button class="option-card" data-value="aromatic">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M2 12h20M12 2v20"/>
+                                </svg>
+                                <span>Aromatic/Herbal</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="question-container hidden" data-question="4">
+                        <h3>Which specific notes do you prefer?</h3>
+                        <div class="options-grid">
+                            <!-- Floral -->
+                            <button class="option-card scent-note floral-note" data-value="rose" data-family="floral">
+                                <span>Rose & Jasmine</span>
+                                <small>Classic floral bouquet</small>
+                            </button>
+                            <button class="option-card scent-note floral-note" data-value="white-floral" data-family="floral">
+                                <span>White Flowers</span>
+                                <small>Gardenia, Tuberose, Lily</small>
+                            </button>
+                            <!-- Woody -->
+                            <button class="option-card scent-note woody-note" data-value="sandalwood" data-family="woody">
+                                <span>Sandalwood & Cedar</span>
+                                <small>Creamy, smooth woods</small>
+                            </button>
+                            <button class="option-card scent-note woody-note" data-value="vetiver" data-family="woody">
+                                <span>Vetiver & Patchouli</span>
+                                <small>Earthy, deep woods</small>
+                            </button>
+                            <!-- Oriental -->
+                            <button class="option-card scent-note oriental-note" data-value="vanilla" data-family="oriental">
+                                <span>Vanilla & Amber</span>
+                                <small>Warm, sweet spices</small>
+                            </button>
+                            <button class="option-card scent-note oriental-note" data-value="oud" data-family="oriental">
+                                <span>Oud & Incense</span>
+                                <small>Deep, resinous notes</small>
+                            </button>
+                            <!-- Fresh -->
+                            <button class="option-card scent-note fresh-note" data-value="citrus" data-family="fresh">
+                                <span>Citrus & Bergamot</span>
+                                <small>Bright, zesty notes</small>
+                            </button>
+                            <button class="option-card scent-note fresh-note" data-value="aquatic" data-family="fresh">
+                                <span>Marine & Aquatic</span>
+                                <small>Ocean breeze, salt air</small>
+                            </button>
+                            <!-- Gourmand -->
+                            <button class="option-card scent-note gourmand-note" data-value="vanilla-gourmand" data-family="gourmand">
+                                <span>Vanilla & Caramel</span>
+                                <small>Sweet, dessert-like</small>
+                            </button>
+                            <button class="option-card scent-note gourmand-note" data-value="coffee-chocolate" data-family="gourmand">
+                                <span>Coffee & Chocolate</span>
+                                <small>Rich, dark notes</small>
+                            </button>
+                            <!-- Aromatic -->
+                            <button class="option-card scent-note aromatic-note" data-value="lavender" data-family="aromatic">
+                                <span>Lavender & Herbs</span>
+                                <small>Fresh aromatic herbs</small>
+                            </button>
+                            <button class="option-card scent-note aromatic-note" data-value="mint" data-family="aromatic">
+                                <span>Mint & Sage</span>
+                                <small>Cool, fresh herbs</small>
+                            </button>
                         </div>
                     </div>
 
@@ -559,25 +631,51 @@
                     <div id="result-container" class="hidden">
                         <h3>Your Perfect Fragrance Match</h3>
                         <div class="result-card">
-                            <div class="result-header">
-                                <h4 id="fragrance-name">Loading...</h4>
-                                <p id="fragrance-brand">Brand</p>
+                            <div class="result-grid">
+                                <div class="result-image">
+                                    <img id="fragrance-image" src="" alt="Fragrance Image">
+                                    <div class="result-header">
+                                        <h4 id="fragrance-name">Loading...</h4>
+                                        <p id="fragrance-brand">Brand</p>
+                                        <p id="fragrance-price" class="price">$000</p>
+                                    </div>
+                                </div>
+                                <div class="result-details">
+                                    <p id="fragrance-description">Description will appear here...</p>
+                                    <div class="fragrance-notes">
+                                        <div class="note-section">
+                                            <h5>Top Notes</h5>
+                                            <p id="top-notes">Notes will appear here...</p>
+                                        </div>
+                                        <div class="note-section">
+                                            <h5>Heart Notes</h5>
+                                            <p id="heart-notes">Notes will appear here...</p>
+                                        </div>
+                                        <div class="note-section">
+                                            <h5>Base Notes</h5>
+                                            <p id="base-notes">Notes will appear here...</p>
+                                        </div>
+                                    </div>
+                                    <div class="additional-info">
+                                        <div class="info-item">
+                                            <h5>Longevity</h5>
+                                            <p id="fragrance-longevity">6-8 hours</p>
+                                        </div>
+                                        <div class="info-item">
+                                            <h5>Best For</h5>
+                                            <p id="fragrance-occasion">All occasions</p>
+                                        </div>
+                                        <div class="info-item">
+                                            <h5>Scent Type</h5>
+                                            <p id="fragrance-type">Oriental Woody</p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="result-details">
-                                <p id="fragrance-description">Description will appear here...</p>
-                                <div class="fragrance-notes">
-                                    <div class="note-section">
-                                        <h5>Top Notes</h5>
-                                        <p id="top-notes">Notes will appear here...</p>
-                                    </div>
-                                    <div class="note-section">
-                                        <h5>Heart Notes</h5>
-                                        <p id="heart-notes">Notes will appear here...</p>
-                                    </div>
-                                    <div class="note-section">
-                                        <h5>Base Notes</h5>
-                                        <p id="base-notes">Notes will appear here...</p>
-                                    </div>
+                            <div class="similar-fragrances">
+                                <h5>Similar Fragrances You Might Like</h5>
+                                <div class="similar-grid" id="similar-fragrances">
+                                    <!-- Similar fragrances will be populated here -->
                                 </div>
                             </div>
                             <button id="restart-quiz" class="button-primary">Try Again</button>
@@ -735,6 +833,26 @@
                 padding: var(--spacing-lg);
             }
 
+            .result-grid {
+                display: grid;
+                grid-template-columns: 300px 1fr;
+                gap: var(--spacing-lg);
+                margin-bottom: var(--spacing-xl);
+            }
+
+            .result-image {
+                text-align: center;
+            }
+
+            .result-image img {
+                width: 100%;
+                max-width: 300px;
+                height: auto;
+                border-radius: 8px;
+                margin-bottom: var(--spacing-md);
+                box-shadow: var(--shadow-md);
+            }
+
             .result-header {
                 margin-bottom: var(--spacing-md);
                 text-align: center;
@@ -751,6 +869,13 @@
                 color: var(--text-secondary);
             }
 
+            .price {
+                font-size: 1.25rem;
+                color: var(--primary);
+                font-weight: 600;
+                margin-top: var(--spacing-xs);
+            }
+
             .result-details {
                 margin-bottom: var(--spacing-lg);
             }
@@ -760,6 +885,75 @@
                 grid-template-columns: repeat(3, 1fr);
                 gap: var(--spacing-md);
                 margin-top: var(--spacing-md);
+                margin-bottom: var(--spacing-lg);
+                padding: var(--spacing-md);
+                background: var(--light-bg);
+                border-radius: 8px;
+            }
+
+            .additional-info {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: var(--spacing-md);
+                margin-top: var(--spacing-md);
+            }
+
+            .info-item {
+                text-align: center;
+                padding: var(--spacing-sm);
+                border: 1px solid var(--border);
+                border-radius: 4px;
+            }
+
+            .info-item h5 {
+                font-family: 'Cormorant Garamond', serif;
+                color: var(--primary);
+                margin-bottom: var(--spacing-xs);
+            }
+
+            .similar-fragrances {
+                margin-top: var(--spacing-lg);
+                padding-top: var(--spacing-lg);
+                border-top: 1px solid var(--border);
+            }
+
+            .similar-fragrances h5 {
+                font-family: 'Cormorant Garamond', serif;
+                color: var(--primary);
+                margin-bottom: var(--spacing-md);
+                text-align: center;
+            }
+
+            .similar-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: var(--spacing-md);
+            }
+
+            .similar-item {
+                text-align: center;
+            }
+
+            .similar-item img {
+                width: 100%;
+                height: auto;
+                border-radius: 4px;
+                margin-bottom: var(--spacing-xs);
+                box-shadow: var(--shadow-sm);
+            }
+
+            .similar-item h6 {
+                font-family: 'Cormorant Garamond', serif;
+                font-size: 1rem;
+                color: var(--primary);
+                margin-bottom: var(--spacing-xs);
+            }
+
+            .scent-note small {
+                display: block;
+                font-size: 0.85rem;
+                color: var(--text-secondary);
+                margin-top: var(--spacing-xs);
             }
 
             .note-section h5 {
@@ -810,23 +1004,108 @@
                 
                 // Fragrance database
                 const fragrances = {
-                    daytime_fresh_floral: {
-                        name: "Light Blue",
-                        brand: "Dolce & Gabbana",
-                        description: "A refreshing blend of citrus and floral notes, perfect for bright summer days.",
-                        topNotes: "Sicilian Lemon, Apple, Bellflower",
-                        heartNotes: "Bamboo, Jasmine, White Rose",
-                        baseNotes: "Cedarwood, Amber, Musk"
+                    floral_white_day: {
+                        name: "J'adore",
+                        brand: "Dior",
+                        price: "$135",
+                        image: "https://example.com/jadore.jpg",
+                        description: "An elegant white floral bouquet that embodies sophistication and femininity.",
+                        topNotes: "Bergamot, Pear, Melon",
+                        heartNotes: "Jasmine, Lily of the Valley, Rose",
+                        baseNotes: "Musk, Vanilla, Cedar",
+                        longevity: "8-10 hours",
+                        occasion: "Day to Evening",
+                        type: "Floral",
+                        similar: [
+                            {name: "Chanel No 5", brand: "Chanel", image: "https://example.com/chanel5.jpg"},
+                            {name: "Flora", brand: "Gucci", image: "https://example.com/flora.jpg"}
+                        ]
                     },
-                    evening_oriental_luxury: {
+                    oriental_oud_night: {
                         name: "Black Orchid",
                         brand: "Tom Ford",
+                        price: "$250",
+                        image: "https://example.com/black-orchid.jpg",
                         description: "A luxurious oriental fragrance with deep, mysterious notes.",
                         topNotes: "Black Truffle, Ylang-Ylang, Bergamot",
                         heartNotes: "Black Orchid, Spices",
-                        baseNotes: "Patchouli, Vanilla, Dark Chocolate"
+                        baseNotes: "Patchouli, Vanilla, Dark Chocolate",
+                        longevity: "12+ hours",
+                        occasion: "Evening & Special Events",
+                        type: "Oriental",
+                        similar: [
+                            {name: "Opium", brand: "YSL", image: "https://example.com/opium.jpg"},
+                            {name: "Noir", brand: "Tom Ford", image: "https://example.com/noir.jpg"}
+                        ]
                     },
-                    // Add more fragrance combinations as needed
+                    fresh_citrus_day: {
+                        name: "Light Blue",
+                        brand: "Dolce & Gabbana",
+                        price: "$98",
+                        image: "https://example.com/light-blue.jpg",
+                        description: "A refreshing blend of citrus and floral notes, perfect for bright summer days.",
+                        topNotes: "Sicilian Lemon, Apple, Bellflower",
+                        heartNotes: "Bamboo, Jasmine, White Rose",
+                        baseNotes: "Cedarwood, Amber, Musk",
+                        longevity: "4-6 hours",
+                        occasion: "Daytime & Casual",
+                        type: "Fresh Citrus",
+                        similar: [
+                            {name: "CK One", brand: "Calvin Klein", image: "https://example.com/ck-one.jpg"},
+                            {name: "L'Eau d'Issey", brand: "Issey Miyake", image: "https://example.com/issey.jpg"}
+                        ]
+                    },
+                    woody_vetiver_night: {
+                        name: "Terre d'Hermès",
+                        brand: "Hermès",
+                        price: "$165",
+                        image: "https://example.com/terre.jpg",
+                        description: "A sophisticated woody fragrance with mineral and earthy undertones.",
+                        topNotes: "Orange, Grapefruit, Pepper",
+                        heartNotes: "Pelargonium, Cedar",
+                        baseNotes: "Vetiver, Patchouli, Benzoin",
+                        longevity: "8-10 hours",
+                        occasion: "Business & Evening",
+                        type: "Woody Aromatic",
+                        similar: [
+                            {name: "Vetiver", brand: "Guerlain", image: "https://example.com/vetiver.jpg"},
+                            {name: "Grey Vetiver", brand: "Tom Ford", image: "https://example.com/grey-vetiver.jpg"}
+                        ]
+                    },
+                    gourmand_vanilla_day: {
+                        name: "La Vie Est Belle",
+                        brand: "Lancôme",
+                        price: "$126",
+                        image: "https://example.com/la-vie.jpg",
+                        description: "A sweet and sophisticated gourmand fragrance with iris and praline notes.",
+                        topNotes: "Black Currant, Pear",
+                        heartNotes: "Iris, Jasmine, Orange Blossom",
+                        baseNotes: "Praline, Vanilla, Patchouli",
+                        longevity: "8-12 hours",
+                        occasion: "Day to Evening",
+                        type: "Gourmand",
+                        similar: [
+                            {name: "Mon Paris", brand: "YSL", image: "https://example.com/mon-paris.jpg"},
+                            {name: "Si", brand: "Giorgio Armani", image: "https://example.com/si.jpg"}
+                        ]
+                    },
+                    aromatic_lavender_day: {
+                        name: "Pour Monsieur",
+                        brand: "Chanel",
+                        price: "$155",
+                        image: "https://example.com/pour-monsieur.jpg",
+                        description: "A classic aromatic fragrance with sophisticated herbal notes.",
+                        topNotes: "Lavender, Lemon, Neroli",
+                        heartNotes: "Cardamom, Ginger, Basil",
+                        baseNotes: "Cedarwood, Oakmoss, Vanilla",
+                        longevity: "6-8 hours",
+                        occasion: "Business & Casual",
+                        type: "Aromatic Fougère",
+                        similar: [
+                            {name: "Pour Homme", brand: "Cartier", image: "https://example.com/pour-homme.jpg"},
+                            {name: "L'Homme Ideal", brand: "Guerlain", image: "https://example.com/ideal.jpg"}
+                        ]
+                    }
                 };
 
                 function updateProgress() {
@@ -846,20 +1125,54 @@
                 }
 
                 function showResults() {
-                    // Simple logic to determine fragrance - can be made more sophisticated
+                    // More sophisticated fragrance selection logic
                     let recommendedFragrance;
-                    if (userAnswers.timing === 'day' && userAnswers.atmosphere === 'fresh') {
-                        recommendedFragrance = fragrances.daytime_fresh_floral;
+                    const timing = userAnswers.question1;
+                    const atmosphere = userAnswers.question2;
+                    const scentFamily = userAnswers.question3;
+                    const specificNote = userAnswers.question4;
+
+                    // Match fragrance based on user preferences
+                    if (scentFamily === 'floral' && specificNote.includes('white-floral')) {
+                        recommendedFragrance = fragrances.floral_white_day;
+                    } else if (scentFamily === 'oriental' && specificNote.includes('oud')) {
+                        recommendedFragrance = fragrances.oriental_oud_night;
+                    } else if (scentFamily === 'fresh' && specificNote.includes('citrus')) {
+                        recommendedFragrance = fragrances.fresh_citrus_day;
+                    } else if (scentFamily === 'woody' && specificNote.includes('vetiver')) {
+                        recommendedFragrance = fragrances.woody_vetiver_night;
+                    } else if (scentFamily === 'gourmand' && specificNote.includes('vanilla')) {
+                        recommendedFragrance = fragrances.gourmand_vanilla_day;
+                    } else if (scentFamily === 'aromatic' && specificNote.includes('lavender')) {
+                        recommendedFragrance = fragrances.aromatic_lavender_day;
                     } else {
-                        recommendedFragrance = fragrances.evening_oriental_luxury;
+                        // Default to a versatile fragrance if no exact match
+                        recommendedFragrance = fragrances.floral_white_day;
                     }
 
+                    // Update the result display
+                    document.getElementById('fragrance-image').src = recommendedFragrance.image;
+                    document.getElementById('fragrance-image').alt = `${recommendedFragrance.name} by ${recommendedFragrance.brand}`;
                     document.getElementById('fragrance-name').textContent = recommendedFragrance.name;
                     document.getElementById('fragrance-brand').textContent = recommendedFragrance.brand;
+                    document.getElementById('fragrance-price').textContent = recommendedFragrance.price;
                     document.getElementById('fragrance-description').textContent = recommendedFragrance.description;
                     document.getElementById('top-notes').textContent = recommendedFragrance.topNotes;
                     document.getElementById('heart-notes').textContent = recommendedFragrance.heartNotes;
                     document.getElementById('base-notes').textContent = recommendedFragrance.baseNotes;
+                    document.getElementById('fragrance-longevity').textContent = recommendedFragrance.longevity;
+                    document.getElementById('fragrance-occasion').textContent = recommendedFragrance.occasion;
+                    document.getElementById('fragrance-type').textContent = recommendedFragrance.type;
+
+                    // Populate similar fragrances
+                    const similarContainer = document.getElementById('similar-fragrances');
+                    similarContainer.innerHTML = recommendedFragrance.similar.map(similar => `
+                        <div class="similar-item">
+                            <img src="${similar.image}" alt="${similar.name}">
+                            <h6>${similar.name}</h6>
+                            <p>${similar.brand}</p>
+                        </div>
+                    `).join('');
 
                     document.querySelectorAll('.question-container').forEach(container => {
                         container.classList.add('hidden');
